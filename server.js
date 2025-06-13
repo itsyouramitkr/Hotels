@@ -23,6 +23,14 @@ app.use('/person',personRouter);
 
 app.use('/menutiem',menuitemRouter);
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 35fa2d7c65177034161a32a726abc654823d0ae3
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
