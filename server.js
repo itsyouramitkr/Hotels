@@ -15,7 +15,7 @@ const logURl =  (req,res,next)=>{
   next();
 }
 app.use(logURl);
-app.get('/',logURl, (req, res) => {
+app.get('/', (req, res) => {
   res.send('hey we are gonna start the nodejs project!')
 });
 
@@ -23,14 +23,6 @@ app.use('/person',personRouter);
 
 app.use('/menutiem',menuitemRouter);
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> 35fa2d7c65177034161a32a726abc654823d0ae3
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
