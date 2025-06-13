@@ -8,19 +8,20 @@ const menuitemRouter = require("./routes/menuitemRoutes");
 const bodyParser = require("body-parser")
 app.use(bodyParser.json());
 
+//middleware function
 
-app.get('/', (req, res) => {
+const logURl =  (req,res,next)=>{
+  console.log(`[${new Date().toLocaleString()}] request to this :${req.originalUrl}`);
+  next();
+}
+app.use(logURl);
+app.get('/',logURl, (req, res) => {
   res.send('hey we are gonna start the nodejs project!')
 });
 
 app.use('/person',personRouter);
 
 app.use('/menutiem',menuitemRouter);
-
-
-
-
-
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
